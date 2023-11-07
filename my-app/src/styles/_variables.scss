@@ -1,0 +1,27 @@
+$grey: #eeeded;
+$lightGrey: #bbbaba;
+$green: #8ed93d;
+$white: #ffffff;
+$ligthWhite: #f0eeee;
+$black: #000000;
+$lightBlack: #4b4b4b;
+$filter-white: invert(1);
+
+@mixin flexCenter($direction, $justify-content) {
+  display: flex;
+  align-items: center;
+  flex-direction: $direction;
+  justify-content: $justify-content;
+}
+.wrapper {
+  margin: 0 50px;
+  @media screen and (min-width: 768px) {
+    margin: 0 100px;
+  }
+  @media screen and (min-width: 1024px) {
+    margin: 0 200px;
+  }
+}
+a {
+  text-decoration: none;
+}

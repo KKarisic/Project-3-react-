@@ -1,0 +1,108 @@
+@import "../styles/variables";
+.latest-news {
+  margin: 0;
+  h2 {
+    margin: 20px 0;
+  }
+  .posts {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 40px;
+    margin-bottom: 30px; //to separete pagination
+    @media screen and (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    .post {
+      @include flexCenter(column, flex-start);
+      align-items: flex-start;
+      gap: 15px;
+      width: 100%;
+      .post-img {
+        width: 100%;
+        img {
+          object-fit: cover;
+        }
+      }
+      .latest-news-category {
+        p {
+          display: inline-block;
+          background-color: $green;
+          color: $white;
+          padding: 2px 15px;
+        }
+      }
+      .post-description {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        .limited-text {
+          color: $lightGrey;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .post-info {
+          color: $lightGrey;
+        }
+      }
+    }
+  }
+  .pagination {
+    @include flexCenter(column, flex-start);
+    @media screen and (min-width: 768px) {
+      @include flexCenter(row, flex-start);
+    }
+    gap: 10px;
+    flex-wrap: wrap;
+    .page-numbers {
+      order: 1;
+      width: max-content;
+      @media screen and (min-width: 768px) {
+        order: 2;
+      }
+      @include flexCenter(row, center);
+      flex-wrap: wrap;
+    }
+    button.previous-btn {
+      width: 100%;
+      order: 2;
+      @media screen and (min-width: 768px) {
+        width: inherit;
+        order: 1;
+      }
+    }
+    button.next-btn {
+      width: 100%;
+      order: 3;
+      @media screen and (min-width: 768px) {
+        width: inherit;
+        order: 3;
+      }
+    }
+    & button {
+      padding: 10px 20px;
+      background-color: transparent;
+      color: $lightGrey;
+      border: 2px solid $lightGrey;
+      cursor: pointer;
+    }
+    & button:hover {
+      color: $lightBlack;
+      background-color: $lightGrey;
+    }
+    & button.active {
+      background-color: $lightGrey;
+      color: $lightBlack;
+    }
+    & button[disabled] {
+      border: 1px solid $ligthWhite;
+    }
+    & button[disabled]:hover {
+      background-color: transparent;
+      color: $lightGrey;
+    }
+  }
+}

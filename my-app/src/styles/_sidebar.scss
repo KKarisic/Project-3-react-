@@ -1,0 +1,9 @@
+@import "../styles/variables";
+
+aside {
+  margin: 0 0 50px 0;
+  @media screen and (min-width: 1024px) {
+    @include flexCenter(column, center);
+    gap: 50px;
+  }
+}

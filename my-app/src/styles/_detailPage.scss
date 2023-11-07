@@ -1,0 +1,38 @@
+@import "../styles/variables";
+
+.detail-page {
+  margin: 40px;
+  @media screen and (min-width: 1024px) {
+    margin: 40px 100px;
+  }
+  .post {
+    margin: 20px 0;
+    width: 100%;
+    @media screen and (min-width: 1024px) {
+      width: 50%;
+    }
+    .post-img {
+      img {
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+    .latest-news-category {
+      p {
+        display: inline-block;
+        background-color: $green;
+        color: $white;
+        padding: 2px 15px;
+      }
+    }
+    .post-description {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .post-info {
+        color: $lightGrey;
+      }
+    }
+  }
+}

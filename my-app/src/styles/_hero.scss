@@ -1,0 +1,48 @@
+@import "../styles/variables";
+
+.hero {
+  background-color: $grey;
+  padding: 40px 0;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  .wrapper {
+    @include flexCenter(column, space-between);
+    gap: 15px;
+    @media screen and (min-width: 1024px) {
+      @include flexCenter(row, space-between);
+    }
+    .headline {
+      @include flexCenter(column, space-between);
+      @media screen and (min-width: 768px) {
+        @include flexCenter(row, space-between);
+        gap: 15px;
+      }
+      .circle-blog {
+        @include flexCenter(row, space-between);
+        gap: 10px;
+        .circle {
+          background-color: $green;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          .settingIcon {
+            filter: $filter-white;
+            width: 50%;
+          }
+        }
+        h2 {
+          font-size: 30px;
+        }
+      }
+      p {
+        font-style: italic;
+        color: $lightGrey;
+      }
+
+      .headline-path {
+        span {
+          color: $lightBlack;
+        }
+      }
+    }
+  }
+}

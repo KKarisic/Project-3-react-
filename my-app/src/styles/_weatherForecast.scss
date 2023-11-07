@@ -1,0 +1,59 @@
+@import "../styles/variables";
+
+.weather-forecast {
+  width: 100%;
+  h2 {
+    margin: 20px 0;
+  }
+  .city-img {
+    img {
+      width: 100%;
+      object-fit: cover;
+      height: 250px;
+    }
+  }
+  h3 {
+    text-align: center;
+    text-transform: uppercase;
+    margin: 10px 0;
+  }
+  .forecast-days {
+    @media screen and (max-width: 600px) {
+      display: block;
+    }
+    @include flexCenter(row, space-between);
+    flex-wrap: wrap;
+    .forecast {
+      @include flexCenter(column, center);
+      gap: 10px;
+      .days-of-week {
+        font-weight: 700;
+      }
+    }
+  }
+  .city-buttons {
+    @media screen and (max-width: 600px) {
+      @include flexCenter(column, space-between);
+    }
+    @include flexCenter(row, space-between);
+    gap: 5px;
+    & button {
+      @media screen and (max-width: 600px) {
+        width: 100%;
+      }
+      padding: 10px;
+      background-color: transparent;
+      color: $lightGrey;
+      border: 2px solid $lightGrey;
+      cursor: pointer;
+    }
+    & button:hover {
+      color: $lightBlack;
+      background-color: $lightGrey;
+    }
+    button.active {
+      background-color: $lightGrey;
+      color: $lightBlack;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@import "../styles/variables";
+
+.pages {
+  margin: 100px 50px;
+  @media screen and (min-width: 768px) {
+    margin: 100px 100px;
+  }
+  @media screen and (min-width: 1024px) {
+    margin: 100px 200px;
+  }
+}

@@ -1,0 +1,46 @@
+@import "../styles/variables";
+
+.dropdown-container {
+  @include flexCenter(row, space-between);
+  gap: 5px;
+  position: relative;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+.menu-button {
+  background-color: transparent;
+  color: $white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+.menu-list {
+  z-index: 2;
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  top: 70px;
+  left: -20px;
+  width: 100vw;
+  height: 100vh;
+  background-color: $white;
+  padding-top: 20px;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  li {
+    padding: 10px 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    gap: 5px;
+    img.icon {
+      width: 10px;
+      filter: $filter-white;
+    }
+    a.active {
+      color: $green;
+    }
+  }
+}

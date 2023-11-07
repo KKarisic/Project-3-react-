@@ -1,0 +1,107 @@
+@import "../styles/variables";
+
+footer {
+  background-color: $black;
+  color: $lightGrey;
+  padding: 50px 0;
+  .wrapper {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas:
+      "logo-newsletter"
+      "popular-categories"
+      " copyrights"
+      "footer-line";
+    .logo-newsletter {
+      grid-area: logo-newsletter;
+    }
+    .popular-categories {
+      grid-area: popular-categories;
+    }
+    .copyrights {
+      grid-area: copyrights;
+    }
+    .footer-line {
+      grid-area: footer-line;
+    }
+    @media screen and (min-width: 768px) {
+      grid-template-columns: 2fr 3fr;
+      grid-template-rows: auto auto auto;
+      gap: 40px;
+      grid-template-areas:
+        "logo-newsletter logo-newsletter"
+        "popular-categories copyrights"
+        "footer-line footer-line";
+    }
+    @media only screen and (min-width: 1024px) {
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 20px;
+      grid-template-areas:
+        "logo-newsletter popular-categories copyrights"
+        "footer-line footer-line footer-line";
+    }
+  }
+  .logo-newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .social-icons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .social-icons {
+      filter: $filter-white;
+    }
+    form {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2px;
+      .input-field {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #ccc;
+      }
+      .form-button {
+        background-color: $green;
+        text-transform: uppercase;
+        color: white;
+        border: none;
+        padding: 16px 20px;
+        cursor: pointer;
+      }
+      .form-button:hover {
+        color: $black;
+      }
+    }
+  }
+  .popular-categories,
+  .copyrights {
+    .popular-categories-headline,
+    .copyrights-headline {
+      color: $white;
+      font-weight: 700;
+    }
+    .footer-category {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 10px 0;
+      border-bottom: 1px dashed #ccc;
+      padding-bottom: 5px;
+      p {
+        margin: 0;
+      }
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+  .footer-line {
+    p {
+      text-align: center;
+    }
+  }
+}

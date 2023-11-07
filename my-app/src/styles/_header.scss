@@ -1,0 +1,56 @@
+@import "../styles/variables";
+
+.header {
+  font-size: 0.8em;
+  @include flexCenter(row, space-between);
+  padding: 20px;
+  background-color: ($green);
+  color: white;
+
+  .logo_nav {
+    @media screen and (min-width: 768px) {
+      @include flexCenter(row, space-between);
+      text-transform: uppercase;
+      gap: 30px;
+      a {
+        text-decoration: none;
+        color: $white;
+      }
+      a:hover {
+        color: black;
+      }
+      .logo {
+        display: block;
+      }
+      .icons {
+        @include flexCenter(row, center);
+        gap: 10px;
+        .icon {
+          width: 30px;
+          height: 30px;
+          filter: $filter-white;
+          .icon:hover {
+            filter: invert(100%);
+          }
+        }
+      }
+      .nav-list {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        li {
+          cursor: pointer;
+          display: flex;
+          gap: 5px;
+          img.icon {
+            width: 15px;
+            filter: $filter-white;
+          }
+        }
+        li a.active {
+          color: $lightBlack;
+        }
+      }
+    }
+  }
+}

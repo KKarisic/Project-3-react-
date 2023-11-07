@@ -1,0 +1,21 @@
+@import "./styles/variables";
+@import "./styles/pages";
+@import "./styles/header";
+@import "./styles/dropdownMenu";
+@import "./styles/hero";
+@import "./styles/main";
+@import "./styles/latestNews";
+@import "./styles/sidebar";
+@import "./styles/displayedNews";
+@import "./styles/modals";
+@import ".styles/weatherForecast";
+@import "./styles/banner";
+@import "./styles/footer";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Inter", sans-serif;
+}

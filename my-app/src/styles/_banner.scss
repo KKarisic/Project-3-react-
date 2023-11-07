@@ -1,0 +1,14 @@
+@import "../styles/variables";
+
+.banner {
+  width: 100%;
+  h2 {
+    margin: 20px 0;
+  }
+  .banner-img {
+    img {
+      object-fit: contain;
+      width: 100%;
+    }
+  }
+}
